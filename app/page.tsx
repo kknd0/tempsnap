@@ -12,10 +12,10 @@ const appPage: React.FC = () => {
   const [resultImageUrl, setResultImageUrl] = useState<string | null>(null)
   const polling = async (imageId: string) => {
     console.log('polling')
-    const { image } = await getImageStatus(imageId)
-    if (image.status === 'completed' || image.status === 'failed') {
-      setImageStatus(image.status)
-      setResultImageUrl(image.url)
+    const { status, url } = await getImageStatus(imageId)
+    if (status === 'completed' || status === 'failed') {
+      setImageStatus(status)
+      setResultImageUrl(url)
     } else {
       setTimeout(() => {
         polling(imageId)
