@@ -23,17 +23,15 @@ export const getImageStatus = async (imageId: string) => {
   //     }
   // }
   const data = (await response.json()) as {
-    image: {
-      id: string
-      url: string
-      ownerId: string
-      prompt: string
-      uploadedImageIds: string[]
-      createdAt: string
-      finishedAt: string | null
-      updatedAt: string
-      status: string
-    }
+    id: string
+    url: string
+    ownerId: string
+    prompt: string
+    uploadedImageIds: string[]
+    createdAt: string
+    finishedAt: string | null
+    updatedAt: string
+    status: string
   }
   return data
 }
